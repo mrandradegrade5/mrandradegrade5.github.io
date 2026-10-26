@@ -113,8 +113,8 @@ h3 { font-family: var(--display); font-weight: 600; font-size: 19px; margin: 0; 
 .filters button { font: 700 14px/1 var(--body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 8px 14px; cursor: pointer }
 .filters button[aria-pressed="true"] { background: var(--brand); color: #fff7f0; border-color: var(--brand) }
 .topic-group { display: flex; flex-direction: column; gap: 12px }
-.topic-group h3 { display: flex; align-items: center; gap: 10px }
-.topic-group h3::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: var(--tc) }
+.topic-group > h3 { display: flex; align-items: center; gap: 10px }
+.topic-group > h3::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: var(--tc) }
 
 /* Dates */
 .month { display: flex; flex-direction: column; gap: 10px }
