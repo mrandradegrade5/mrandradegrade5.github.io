@@ -1,0 +1,159 @@
+{
+  "updated": "2026-10-26T17:30:00-04:00",
+  "class": {
+    "name": "Mr. Andrade's Grade 5",
+    "school": "Masonville P.S.",
+    "teacher": "Mr. Andrade",
+    "email": "tv61990@tvdsb.ca"
+  },
+  "topics": ["Literacy", "Math", "Social Studies", "Science", "Health", "Art", "Bell Work", "Miscellaneous/Other"],
+  "posts": [
+    {
+      "id": "874198439941", "topic": "Literacy", "type": "assignment",
+      "title": "Introductory Book Report", "posted": "2026-10-21", "due": "2026-11-16",
+      "text": "",
+      "parentNote": "Students build their book report in the slides below. The template and a finished sample show what a complete report looks like.",
+      "links": [
+        {"label": "Book Report Template", "kind": "Slides", "url": "https://docs.google.com/presentation/d/10oCmqQohDfI1vWU8undZEs_NMxsLkOCJ23wGMzPiEeU/edit"},
+        {"label": "Introductory Book Report", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1yY1ZVahf-pm4CU14FTSVezdv87ruy8vrjL_pGVdykEA/edit"},
+        {"label": "Book Report Sample", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1pJgW5rooTjy3izkiIeLRK-Ld94TMxNK4s3brpbSE_d8/edit"}
+      ]
+    },
+    {
+      "id": "891849671255", "topic": "Literacy", "type": "material", "spelling": true,
+      "title": "Week 4 Spelling", "posted": "2026-10-13", "due": null,
+      "text": "This week's spelling lists are attached. Group A and Group B, please open your group's list.",
+      "parentNote": "Your child knows whether they are in Group A or Group B. Practising the list a few minutes each night helps.",
+      "links": [
+        {"label": "Group A list", "kind": "PDF", "url": "https://drive.google.com/file/d/1kKyem7LnVuvQoLjt4nhApRZeLvxx0rQI/view"},
+        {"label": "Group B list", "kind": "PDF", "url": "https://drive.google.com/file/d/15Grf7YcZ2SQ7szM601D62LZx6UCY1EvG/view"}
+      ]
+    },
+    {
+      "id": "884569695781", "topic": "Literacy", "type": "material",
+      "title": "Powerful Writing in a Biography", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "Lesson slides on writing strong biographies, used with the Explorers Biography assignment.",
+      "links": [{"label": "Powerful Writing in a Biography", "kind": "Slides", "url": "https://docs.google.com/presentation/d/16zMh9TvuVwOiak05YrEeC28cBUOHJRF2u67H8hgm0u4/edit"}]
+    },
+    {
+      "id": "892645327482", "topic": "Math", "type": "material",
+      "title": "Number Representation Practice Quiz", "posted": "2026-10-16", "due": null,
+      "text": "", "parentNote": "A practice quiz on representing whole numbers and decimals. A good way to review at home.",
+      "links": [{"label": "Practice Quiz", "kind": "Word", "url": "https://drive.google.com/file/d/1O-_CZc62TdVSjHV-Nd5tqUY2E9rnBd3S/view"}]
+    },
+    {
+      "id": "873703415404", "topic": "Math", "type": "material",
+      "title": "Math Block 1 Slides", "posted": "2026-10-02", "due": null,
+      "text": "", "parentNote": "The lesson slides for our current math unit.",
+      "links": [{"label": "Grade 5 Block 1 Slides", "kind": "Slides", "url": "https://docs.google.com/presentation/d/18Eb7OpAXWoQ_V-WMG7_ULhtWlTmfNWu-UP5cS7oxLmU/edit"}]
+    },
+    {
+      "id": "888627984408", "topic": "Math", "type": "material",
+      "title": "Math First 10 Days Slides", "posted": "2026-10-01", "due": null,
+      "text": "", "parentNote": "Slides from the first ten days of math this year.",
+      "links": [{"label": "Gr. 5 Math First 10 Days", "kind": "PowerPoint", "url": "https://drive.google.com/file/d/1D6rTqs3i8Pmg7WwiBCTRizewKfrSFk1E/view"}]
+    },
+    {
+      "id": "873664210758", "topic": "Math", "type": "material",
+      "title": "Polypad Manipulatives", "posted": "2026-10-01", "due": null,
+      "text": "", "parentNote": "Free online number tiles and blocks we use in class. No login needed.",
+      "links": [{"label": "Polypad virtual manipulatives", "kind": "Website", "url": "https://polypad.amplify.com/p#number-tiles"}]
+    },
+    {
+      "id": "885482094967", "topic": "Math", "type": "material",
+      "title": "Math Puzzles", "posted": "2026-09-16", "due": null,
+      "text": "", "parentNote": "A daily math puzzle site. Great for early finishers and for fun at home.",
+      "links": [{"label": "Beast Academy daily puzzles", "kind": "Website", "url": "https://beastacademy.com/puzzles/daily/allten"}]
+    },
+    {
+      "id": "889397304089", "topic": "Social Studies", "type": "assignment",
+      "title": "Explorers Biography Assignment", "posted": "2026-10-06", "due": "2026-10-23",
+      "text": "", "parentNote": "Students research an explorer and present a biography using the template.",
+      "links": [
+        {"label": "Biography Template", "kind": "Slides", "url": "https://docs.google.com/presentation/d/15RtDgZmBflGgyXlIiszAaAmffh7pc6FV-KnTT7WLOos/edit"},
+        {"label": "Explorers Biography Assignment", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1QK24ZcpguUagB3tiiP4pYLHA1uMC6WQ97005iJxZh_Q/edit"},
+        {"label": "Example screenshot", "kind": "Image", "url": "https://drive.google.com/file/d/1Ec7od8G48ebFsGQkznAOeOt19QpCHX18/view"}
+      ]
+    },
+    {
+      "id": "872931951480", "topic": "Social Studies", "type": "material",
+      "title": "The World Before 1700", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "Lesson slides for our unit on the world from 1500 to 1700.",
+      "links": [{"label": "1500 to 1700 Lesson Slides", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1O4go99jOmJXHwvTDMg95cia_oD03DnwEDcrgW42mvDU/edit"}]
+    },
+    {
+      "id": "872932151570", "topic": "Science", "type": "material",
+      "title": "Human Health and Body Systems", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "Lesson slides for our science unit on body systems.",
+      "links": [{"label": "Human Health and Body Systems", "kind": "PowerPoint", "url": "https://drive.google.com/file/d/13dwjrOZh9G51m373Fvd3hF48RTrNIX7L/view"}]
+    },
+    {
+      "id": "884573692261", "topic": "Health", "type": "material",
+      "title": "Healthy Eating Slides", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "Lesson slides from our healthy eating unit.",
+      "links": [{"label": "Grade 5 Health", "kind": "PowerPoint", "url": "https://drive.google.com/file/d/1alKuqB9TD_YtWeW1wDro-O5tsRKBsgFZ/view"}]
+    },
+    {
+      "id": "874094885835", "topic": "Art", "type": "assignment",
+      "title": "Concentric Circles Art", "posted": "2026-10-19", "due": "2026-11-04",
+      "text": "", "parentNote": "A colour art project using concentric circles. Instructions are in the slides.",
+      "links": [{"label": "Concentric Circles Color Art", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1MpetJjH1WS6W6MAZOIOWbqd38AEYsIv3x3ItwGxQbiA/edit"}]
+    },
+    {
+      "id": "873299506765", "topic": "Art", "type": "assignment",
+      "title": "Candy Shoe Art Assignment", "posted": "2026-09-22", "due": "2026-10-14",
+      "text": "", "parentNote": "Students design a candy themed sneaker. The PDF has printable templates.",
+      "links": [
+        {"label": "Candy Shoe Art", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1AgvwlV2qdeTprJeJlqM_kIRi8j3AW-VOWgAxdQexrsM/edit"},
+        {"label": "Sneaker colouring templates", "kind": "PDF", "url": "https://drive.google.com/file/d/10gmAkB-iDRxqtVAd2qdxm3ZHHaD-RfXW/view"}
+      ]
+    },
+    {
+      "id": "872931907149", "topic": "Art", "type": "material",
+      "title": "Puzzle Piece Art", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "Our first art project of the year.",
+      "links": [{"label": "Puzzle Piece Art", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1OfXDCc_LvBwrmtatjrblZPaGQ5xgI2EnYzbFelfP5KI/edit"}]
+    },
+    {
+      "id": "888490634775", "topic": "Bell Work", "type": "material",
+      "title": "October Bell Work", "posted": "2026-10-01", "due": null,
+      "text": "", "parentNote": "The short warm up questions students start each morning with this month.",
+      "links": [{"label": "October Grade 5/6 Bell Work", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1l-iPO8XAfsvtApk4XbycXDDZokTg0oD5OjkRAw2jtp4/edit"}]
+    },
+    {
+      "id": "873047952171", "topic": "Bell Work", "type": "material",
+      "title": "September Bell Work", "posted": "2026-09-15", "due": null,
+      "text": "", "parentNote": "September's morning warm up questions.",
+      "links": [{"label": "September Grade 5/6 Bell Work", "kind": "Slides", "url": "https://docs.google.com/presentation/d/174N2kI2IjkfzAOXkFNeSdAyxxKVWTGk5EDyY7lkw4NQ/edit"}]
+    },
+    {
+      "id": "885009683367", "topic": "Miscellaneous/Other", "type": "assignment",
+      "title": "Passion Project", "posted": "2026-09-14", "due": null,
+      "text": "", "parentNote": "An ongoing project where students explore a topic they care about.",
+      "links": [
+        {"label": "Passion Project Template", "kind": "Slides", "url": "https://docs.google.com/presentation/d/1dklsVVoDXsw4XcEwaVS6eG0ODax3z5UKEUmSVKOQQ0s/edit"},
+        {"label": "Passion Project", "kind": "PowerPoint", "url": "https://drive.google.com/file/d/1UYbHBDYHgH3Y9w4bhHjnpLzKLTKEp-Ey/view"}
+      ]
+    },
+    {
+      "id": "826365964456", "topic": "Miscellaneous/Other", "type": "material",
+      "title": "Online Links", "posted": "2026-09-11", "due": null,
+      "text": "", "parentNote": "The websites and logins page students use in class.",
+      "links": [{"label": "Online Links", "kind": "Image", "url": "https://drive.google.com/file/d/1hi6MnQD7mJKI2KwRowd4yvRwb4dWUGoP/view"}]
+    }
+  ],
+  "events": [
+    {"date": "2026-10-26", "title": "PA Day", "note": "No school for students", "kind": "pa"},
+    {"date": "2026-12-21", "end": "2027-01-01", "title": "Winter Break", "kind": "holiday"},
+    {"date": "2027-01-15", "title": "PA Day", "note": "No school for students", "kind": "pa"},
+    {"date": "2027-02-15", "title": "Family Day", "kind": "holiday"},
+    {"date": "2027-03-15", "end": "2027-03-19", "title": "March Break", "kind": "holiday"},
+    {"date": "2027-03-26", "title": "Good Friday", "kind": "holiday"},
+    {"date": "2027-03-29", "title": "Easter Monday", "kind": "holiday"},
+    {"date": "2027-04-16", "title": "PA Day", "note": "No school for students", "kind": "pa"},
+    {"date": "2027-05-24", "title": "Victoria Day", "kind": "holiday"},
+    {"date": "2027-06-04", "title": "PA Day", "note": "No school for students", "kind": "pa"},
+    {"date": "2027-06-29", "title": "Last day of classes", "kind": "school"},
+    {"date": "2027-06-30", "title": "PA Day", "note": "No school for students", "kind": "pa"}
+  ]
+}

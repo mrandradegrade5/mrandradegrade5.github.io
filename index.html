@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mr. Andrade's Grade 5 class at Masonville P.S.: what's due, classwork, important dates and how to reach Mr. Andrade.">
+<meta name="theme-color" content="#7d1a2b">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Mr. Andrade's Grade 5 Class</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Layout: school pennant — a light masthead framed by the Mustang flames, burgundy tab bar with gold markers, one column of posted notices */
+:root {
+  --paper: #fbf7f6;
+  --card: #ffffff;
+  --ink: #2a1317;
+  --ink-soft: #6a4a50;
+  --line: #ecdde0;
+  --brand: #7d1a2b;           /* burgundy */
+  --brand-deep: #5e1120;
+  --accent: #d9a228;          /* gold */
+  --accent-ink: #2a1317;
+  --link: #8b1e2f;
+  --due: #b4232f;
+  --done: #8a7377;
+  --tag-lit: #7c3aed; --tag-math: #0f766e; --tag-ss: #b45309; --tag-sci: #2563eb;
+  --tag-health: #16a34a; --tag-art: #db2777; --tag-bell: #6b5a5e; --tag-misc: #8a6f74;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #1a0d10; --card: #26151a; --ink: #f6eced; --ink-soft: #c8adb2; --line: #3d232a;
+  --brand: #7d1a2b; --brand-deep: #4d0e19; --accent: #e8b84a; --accent-ink: #2a1317;
+  --link: #f2b6c0; --due: #ff7a85; --done: #9c868a;
+  --tag-lit: #b794f6; --tag-math: #2dd4bf; --tag-ss: #f59e0b; --tag-sci: #7aa7ff;
+  --tag-health: #4ade80; --tag-art: #f472b6; --tag-bell: #b9a7ab; --tag-misc: #c4aeb2;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #1a0d10; --card: #26151a; --ink: #f6eced; --ink-soft: #c8adb2; --line: #3d232a;
+  --brand: #7d1a2b; --brand-deep: #4d0e19; --accent: #e8b84a; --accent-ink: #2a1317;
+  --link: #f2b6c0; --due: #ff7a85; --done: #9c868a;
+  --tag-lit: #b794f6; --tag-math: #2dd4bf; --tag-ss: #f59e0b; --tag-sci: #7aa7ff;
+  --tag-health: #4ade80; --tag-art: #f472b6; --tag-bell: #b9a7ab; --tag-misc: #c4aeb2;
+  color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: #ffffff; }
+a { color: var(--link) }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header: always the light pennant, like the class slides, in both themes */
+.masthead { background: #ffffff url("flame-left.png") left center / auto 92% no-repeat; position: relative; border-bottom: 4px solid #d9a228; }
+.masthead::after { content: ""; position: absolute; inset: 0; background: url("flame-right.png") right center / auto 92% no-repeat; pointer-events: none }
+.masthead .wrap { position: relative; z-index: 1; padding-block: 34px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding-left: max(64px, env(safe-area-inset-left, 0px)); padding-right: max(64px, env(safe-area-inset-right, 0px)) }
+.eyebrow { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #8a6a2a; font-weight: 700 }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 6.5vw, 50px); line-height: 1.05; margin: 0; text-wrap: balance; color: #7d1a2b }
+h1 .hl { background: linear-gradient(transparent 64%, #e8b84a 64% 92%, transparent 92%); color: inherit; padding: 0 3px; white-space: nowrap }
+.masthead p { margin: 4px 0 0; color: #6a4a50; max-width: 40ch }
+
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--brand); box-shadow: 0 1px 0 var(--brand-deep) }
+nav.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; justify-content: safe center }
+nav.tabs button { font: 700 15px/1 var(--body); color: #f1d6da; background: none; border: 0; padding: 15px 12px 12px; border-bottom: 3px solid transparent; cursor: pointer; white-space: nowrap }
+nav.tabs button[aria-selected="true"] { color: #fff; border-bottom-color: var(--accent) }
+nav.tabs button:hover { color: #fff }
+
+main .wrap { padding-block: 28px 48px; display: flex; flex-direction: column; gap: 32px }
+section.view { display: flex; flex-direction: column; gap: 28px }
+h2 { font-family: var(--display); font-weight: 800; font-size: 24px; margin: 0; text-wrap: balance }
+h3 { font-family: var(--display); font-weight: 600; font-size: 19px; margin: 0; text-wrap: balance }
+.sub { color: var(--ink-soft); margin: 4px 0 0; max-width: 62ch }
+.block { display: flex; flex-direction: column; gap: 14px }
+
+/* Due list */
+.duelist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px }
+.due-item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px }
+.datebox { text-align: center; border-radius: 8px; padding: 6px 0; background: var(--paper); border: 1px solid var(--line); font-variant-numeric: tabular-nums }
+.datebox .m { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft) }
+.datebox .d { display: block; font-family: var(--display); font-weight: 800; font-size: 24px; line-height: 1.1 }
+.due-item .t { font-weight: 700 }
+.due-item .meta { color: var(--ink-soft); font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center }
+.soon { color: var(--due); font-weight: 700 }
+.empty { color: var(--ink-soft); background: var(--card); border: 1px dashed var(--line); border-radius: var(--r); padding: 16px }
+
+/* Tags */
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--ink-soft) }
+.tag::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--tc, var(--tag-misc)) }
+.kind { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft) }
+
+/* Post cards */
+.posts { display: flex; flex-direction: column; gap: 12px }
+.post { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+.post-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; justify-content: space-between }
+.post .when { font-size: 14px; color: var(--ink-soft); font-variant-numeric: tabular-nums }
+.post .text { margin: 0; max-width: 65ch }
+.post .note { margin: 0; color: var(--ink-soft); max-width: 65ch }
+.links { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px }
+.links a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 6px 12px 6px 8px; font-size: 14px; min-width: 0 }
+.links a:hover { border-color: var(--link) }
+.links .ft { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; background: var(--brand); color: #fff7f0; border-radius: 999px; padding: 2px 7px }
+.badge-due { font-size: 13px; font-weight: 700; color: var(--due) }
+.badge-past { font-size: 13px; color: var(--done) }
+
+/* Spelling highlight */
+.spell { background: var(--card); border: 2px solid var(--accent); border-radius: var(--r); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px }
+
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px }
+.filters button { font: 700 14px/1 var(--body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 8px 14px; cursor: pointer }
+.filters button[aria-pressed="true"] { background: var(--brand); color: #fff7f0; border-color: var(--brand) }
+.topic-group { display: flex; flex-direction: column; gap: 12px }
+.topic-group h3 { display: flex; align-items: center; gap: 10px }
+.topic-group h3::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: var(--tc) }
+
+/* Dates */
+.month { display: flex; flex-direction: column; gap: 10px }
+.month h3 { font-size: 16px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); font-family: var(--body); font-weight: 700 }
+.ev-pa .datebox { background: var(--accent); border-color: var(--accent); color: var(--accent-ink) }
+.ev-pa .datebox .m { color: var(--accent-ink) }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; color: var(--ink-soft) }
+.legend span { display: inline-flex; gap: 6px; align-items: center }
+.sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--line); background: var(--paper) }
+.sw.pa { background: var(--accent); border-color: var(--accent) }
+.sw.due { background: var(--due); border-color: var(--due) }
+details.past summary { cursor: pointer; font-weight: 700; color: var(--ink-soft) }
+details.past[open] summary { margin-bottom: 12px }
+
+/* Parent corner */
+.contact { background: var(--brand); color: #fff7f0; border-radius: var(--r); padding: 20px; display: flex; flex-direction: column; gap: 10px }
+.contact h3 { color: #fff7f0 }
+.contact p { margin: 0; color: #f1d6da; max-width: 60ch }
+.emailrow { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.email { font-size: 18px; font-weight: 700; user-select: all; word-break: break-all; color: #fff }
+.btn { font: 700 15px/1 var(--body); border-radius: 999px; padding: 10px 16px; cursor: pointer; border: 1px solid transparent; text-decoration: none; display: inline-flex; align-items: center }
+.btn.primary { background: var(--accent); color: var(--accent-ink) }
+.btn.ghost { background: transparent; color: inherit; border-color: currentColor }
+form.helper { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; display: grid; gap: 14px }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+@media (max-width: 560px) { .row2 { grid-template-columns: 1fr } }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px }
+input, select, textarea { font: 16px var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100% }
+textarea { min-height: 130px; resize: vertical }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.actions .btn.ghost { color: var(--ink) }
+.status { font-size: 14px; color: var(--ink-soft) }
+.preview { white-space: pre-wrap; font-size: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 0; user-select: all }
+.resources { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px }
+.resources a { display: flex; flex-direction: column; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; text-decoration: none; color: var(--ink); height: 100% }
+.resources a span { color: var(--ink-soft); font-size: 14px }
+.resources a:hover { border-color: var(--link) }
+
+footer { color: var(--ink-soft); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px }
+@media (prefers-reduced-motion: no-preference) { .post, .due-item { transition: border-color .15s } }
+</style>
+</head>
+<body>
+
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Masonville P.S. · 2026–2027</span>
+    <h1>Mr. Andrade's <span class="hl">Grade 5</span></h1>
+    <p>What we're learning, what's due, and how to reach me.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap" role="tablist">
+    <button role="tab" id="tab-home" data-view="home" aria-selected="true">This Week</button>
+    <button role="tab" id="tab-classwork" data-view="classwork" aria-selected="false">Classwork</button>
+    <button role="tab" id="tab-dates" data-view="dates" aria-selected="false">Important Dates</button>
+    <button role="tab" id="tab-parents" data-view="parents" aria-selected="false">Parent Corner</button>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <section class="view" id="view-home" role="tabpanel" aria-labelledby="tab-home">
+      <div class="block">
+        <div><h2>Coming up</h2><p class="sub">Assignment due dates and days off in the next few weeks.</p></div>
+        <ul class="duelist" id="upcoming"><li class="empty">Loading class updates…</li></ul>
+      </div>
+      <div class="block" id="spell-block" hidden>
+        <h2>This week's spelling</h2>
+        <div class="spell" id="spell"></div>
+      </div>
+      <div class="block">
+        <div><h2>Latest from class</h2><p class="sub">The newest posts from our Google Classroom.</p></div>
+        <div class="posts" id="latest"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-classwork" role="tabpanel" aria-labelledby="tab-classwork" hidden>
+      <div><h2>Classwork</h2><p class="sub">Everything posted in Google Classroom, sorted by subject. Tap a file to open it.</p></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by subject"></div>
+      <div class="block" id="topics"></div>
+    </section>
+
+    <section class="view" id="view-dates" role="tabpanel" aria-labelledby="tab-dates" hidden>
+      <div><h2>Important Dates</h2><p class="sub">School holidays, PA days and assignment due dates for the year. Board dates follow the TVDSB 2026–2027 elementary calendar.</p></div>
+      <div class="legend"><span><i class="sw pa"></i>PA day (no school)</span><span><i class="sw"></i>Holiday or school event</span><span><i class="sw due"></i>Assignment due</span></div>
+      <div class="block" id="dates"></div>
+      <details class="past"><summary>Earlier this year</summary><div class="block" id="past-dates"></div></details>
+    </section>
+
+    <section class="view" id="view-parents" role="tabpanel" aria-labelledby="tab-parents" hidden>
+      <div><h2>Parent Corner</h2><p class="sub">Questions, concerns, or good news to share? I'm always happy to hear from families.</p></div>
+
+      <div class="contact">
+        <h3>Contact Mr. Andrade</h3>
+        <p>Email is the best way to reach me. Please include your child's name.</p>
+        <div class="emailrow">
+          <span class="email" id="email">tv61990@tvdsb.ca</span>
+          <button class="btn primary" type="button" id="copy-email">Copy email</button>
+        </div>
+        <p>For absences, please use the school's attendance line or the TVDSB attendance reporting page below.</p>
+      </div>
+
+      <form class="helper" id="helper" novalidate>
+        <div><h3>Write me a message</h3><p class="sub">Fill this in, then copy it into your email. Nothing is sent from this page.</p></div>
+        <div class="row2">
+          <label for="p-name">Your name<input id="p-name" autocomplete="name"></label>
+          <label for="c-name">Your child's name<input id="c-name" autocomplete="off"></label>
+        </div>
+        <label for="topic">Topic
+          <select id="topic">
+            <option>General question</option>
+            <option>Homework or an assignment</option>
+            <option>How my child is doing</option>
+            <option>Request a meeting or call</option>
+            <option>Something happening at home I'd like you to know</option>
+          </select>
+        </label>
+        <label for="msg">Message<textarea id="msg" placeholder="Write your message here"></textarea></label>
+        <div class="actions">
+          <button class="btn primary" type="submit">Copy message</button>
+          <a class="btn ghost" id="mailto" href="#">Open in my email app</a>
+          <span class="status" id="status" aria-live="polite"></span>
+        </div>
+        <pre class="preview" id="preview" hidden></pre>
+      </form>
+
+      <div class="block">
+        <h3>Helpful links</h3>
+        <ul class="resources">
+          <li><a href="https://www.tvdsb.ca/parents/attendance-reporting/">Report an absence<span>TVDSB attendance reporting</span></a></li>
+          <li><a href="https://schoolapps2.tvdsb.ca/parents/tvdsb_parents/">Parent Portal<span>TVDSB forms and account</span></a></li>
+          <li><a href="https://www.tvdsb.ca/students/homework-help/">Homework Help<span>Free support from the board</span></a></li>
+          <li><a href="https://www.tvdsb.ca/schools/bus-cancellations-and-school-closures/">Bus cancellations<span>Weather days and closures</span></a></li>
+          <li><a href="https://www.tvdsb.ca/schools/school-year-and-religious-holiday-calendars/">Full school calendar<span>Board dates and observances</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer id="footer">Updated from Google Classroom.</footer>
+  </div>
+</main>
+
+<script>
+(function () {
+  const TAG = { "Literacy": "--tag-lit", "Math": "--tag-math", "Social Studies": "--tag-ss", "Science": "--tag-sci", "Health": "--tag-health", "Art": "--tag-art", "Bell Work": "--tag-bell", "Miscellaneous/Other": "--tag-misc" };
+  const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const MONTH = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const DAY = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const $ = s => document.querySelector(s);
+  const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") e.className = v; else if (k === "style") e.setAttribute("style", v); else e.setAttribute(k, v); } for (const k of kids) if (k != null) e.append(k); return e; };
+  const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+  const today = (() => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); })();
+  const daysFrom = d => Math.round((d - today) / 86400000);
+  const fmt = d => `${DAY[d.getDay()].slice(0,3)}, ${MON[d.getMonth()]} ${d.getDate()}`;
+  const tagStyle = t => `--tc: var(${TAG[t] || "--tag-misc"})`;
+  const tag = t => el("span", { class: "tag", style: tagStyle(t) }, t === "Miscellaneous/Other" ? "Other" : t);
+  const rel = n => n === 0 ? "Today" : n === 1 ? "Tomorrow" : n < 0 ? `${-n} days ago` : `In ${n} days`;
+
+  function datebox(d) { return el("div", { class: "datebox", "aria-hidden": "true" }, el("span", { class: "m" }, MON[d.getMonth()]), el("span", { class: "d" }, String(d.getDate()))); }
+
+  function postCard(p) {
+    const head = el("div", { class: "post-head" }, el("h3", {}, p.title));
+    const meta = el("div", { class: "post-head" });
+    const left = el("span", { style: "display:flex;gap:12px;flex-wrap:wrap;align-items:center" }, tag(p.topic), el("span", { class: "kind" }, p.type === "assignment" ? "Assignment" : p.type === "announcement" ? "Announcement" : "Material"));
+    let right = el("span", { class: "when" }, "Posted " + fmt(parse(p.posted)));
+    if (p.due) { const dd = parse(p.due), n = daysFrom(dd); right = n >= 0 ? el("span", { class: "badge-due" }, `Due ${fmt(dd)}`) : el("span", { class: "badge-past" }, `Was due ${fmt(dd)}`); }
+    meta.append(left, right);
+    const card = el("article", { class: "post" }, meta, head);
+    if (p.text) card.append(el("p", { class: "text" }, p.text));
+    if (p.parentNote) card.append(el("p", { class: "note" }, p.parentNote));
+    if (p.links && p.links.length) {
+      const ul = el("ul", { class: "links" });
+      for (const l of p.links) ul.append(el("li", {}, el("a", { href: l.url, target: "_blank", rel: "noopener" }, el("span", { class: "ft" }, l.kind || "Link"), l.label)));
+      card.append(ul);
+    }
+    return card;
+  }
+
+  function dueEntries(posts) {
+    return posts.filter(p => p.due).map(p => ({ date: p.due, title: p.title, topic: p.topic, kind: "due" }));
+  }
+
+  function eventRow(e) {
+    const d = parse(e.date), n = daysFrom(d);
+    const li = el("li", { class: "due-item" + (e.kind === "pa" ? " ev-pa" : "") });
+    const body = el("div", { style: "min-width:0" });
+    const title = e.kind === "due" ? `${e.title} due` : e.title;
+    body.append(el("div", { class: "t" }, title));
+    const meta = el("div", { class: "meta" });
+    let when = fmt(d);
+    if (e.end) { const ed = parse(e.end); when = `${fmt(d)} to ${fmt(ed)}`; }
+    meta.append(el("span", {}, when));
+    if (e.kind === "due") meta.prepend(tag(e.topic));
+    if (e.note) meta.append(el("span", {}, e.note));
+    if (n >= 0 && n <= 7) meta.append(el("span", { class: "soon" }, rel(n)));
+    body.append(meta);
+    if (e.kind === "due") li.style.borderLeft = "4px solid var(--due)";
+    li.append(datebox(d), body);
+    return li;
+  }
+
+  function render(data) {
+    const posts = (data.posts || []).slice().sort((a, b) => b.posted.localeCompare(a.posted));
+    if (data.class && data.class.email) $("#email").textContent = data.class.email;
+
+    // Coming up: due dates in the next 6 weeks plus the next two board events
+    const horizon = 42;
+    const due = dueEntries(posts).filter(e => { const n = daysFrom(parse(e.date)); return n >= 0 && n <= horizon; });
+    const evs = (data.events || []).filter(e => daysFrom(parse(e.end || e.date)) >= 0).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 2);
+    const upcoming = due.concat(evs).sort((a, b) => a.date.localeCompare(b.date));
+    const up = $("#upcoming"); up.replaceChildren();
+    if (upcoming.length) upcoming.forEach(e => up.append(eventRow(e)));
+    else up.append(el("li", { class: "empty" }, "Nothing due in the next few weeks."));
+
+    // Spelling: newest spelling post only
+    const spell = posts.find(p => p.spelling || /spelling/i.test(p.title));
+    if (spell) {
+      const box = $("#spell"); box.replaceChildren();
+      box.append(el("div", { class: "post-head" }, el("h3", {}, spell.title), el("span", { class: "when" }, "Posted " + fmt(parse(spell.posted)))));
+      if (spell.text) box.append(el("p", { class: "text", style: "margin:0" }, spell.text));
+      if (spell.parentNote) box.append(el("p", { class: "note", style: "margin:0;color:var(--ink-soft)" }, spell.parentNote));
+      const ul = el("ul", { class: "links" });
+      (spell.links || []).forEach(l => ul.append(el("li", {}, el("a", { href: l.url, target: "_blank", rel: "noopener" }, el("span", { class: "ft" }, l.kind || "Link"), l.label))));
+      box.append(ul);
+      $("#spell-block").hidden = false;
+    }
+
+    // Latest posts (skip older spelling weeks)
+    const latest = $("#latest"); latest.replaceChildren();
+    posts.filter(p => p !== spell).slice(0, 5).forEach(p => latest.append(postCard(p)));
+
+    // Classwork by topic, older spelling weeks hidden behind the current one
+    const topics = (data.topics && data.topics.length) ? data.topics : [...new Set(posts.map(p => p.topic))];
+    const filters = $("#filters"); const tWrap = $("#topics");
+    let active = "All";
+    function drawTopics() {
+      tWrap.replaceChildren();
+      for (const t of topics) {
+        if (active !== "All" && active !== t) continue;
+        const list = posts.filter(p => p.topic === t);
+        if (!list.length) continue;
+        const g = el("div", { class: "topic-group", style: tagStyle(t) }, el("h3", {}, t === "Miscellaneous/Other" ? "Other" : t));
+        const wrap = el("div", { class: "posts" });
+        list.forEach(p => wrap.append(postCard(p)));
+        g.append(wrap); tWrap.append(g);
+      }
+    }
+    filters.replaceChildren();
+    ["All", ...topics.filter(t => posts.some(p => p.topic === t))].forEach(t => {
+      const b = el("button", { type: "button", "aria-pressed": String(t === active) }, t === "Miscellaneous/Other" ? "Other" : t);
+      b.addEventListener("click", () => { active = t; filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); drawTopics(); });
+      filters.append(b);
+    });
+    drawTopics();
+
+    // Important dates grouped by month
+    const all = (data.events || []).concat(dueEntries(posts)).sort((a, b) => a.date.localeCompare(b.date));
+    const future = all.filter(e => daysFrom(parse(e.end || e.date)) >= 0);
+    const past = all.filter(e => daysFrom(parse(e.end || e.date)) < 0).reverse();
+    function byMonth(list, target) {
+      target.replaceChildren();
+      if (!list.length) { target.append(el("p", { class: "empty" }, "No dates here yet.")); return; }
+      let key = null, ul = null;
+      for (const e of list) {
+        const d = parse(e.date), k = d.getFullYear() * 12 + d.getMonth();
+        if (k !== key) { key = k; ul = el("ul", { class: "duelist" }); target.append(el("div", { class: "month" }, el("h3", {}, `${MONTH[d.getMonth()]} ${d.getFullYear()}`), ul)); }
+        ul.append(eventRow(e));
+      }
+    }
+    byMonth(future, $("#dates"));
+    byMonth(past, $("#past-dates"));
+
+    if (data.updated) {
+      const u = new Date(data.updated);
+      if (!isNaN(u)) $("#footer").textContent = `Updated from Google Classroom on ${DAY[u.getDay()]}, ${MONTH[u.getMonth()]} ${u.getDate()}. Grades are shared through report cards and conversations, not on this site.`;
+    }
+  }
+
+  // Tabs with bookmarkable #tokens
+  const views = ["home", "classwork", "dates", "parents"];
+  function show(v) {
+    if (!views.includes(v)) v = "home";
+    views.forEach(x => { $("#view-" + x).hidden = x !== v; $("#tab-" + x).setAttribute("aria-selected", String(x === v)); });
+  }
+  document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => { show(b.dataset.view); try { history.replaceState(null, "", "#" + b.dataset.view); } catch (e) {} window.scrollTo({ top: 0 }); }));
+  show((location.hash || "").slice(1));
+
+  // Copy helpers
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
+  }
+  $("#copy-email").addEventListener("click", async () => {
+    const ok = await copy($("#email").textContent);
+    $("#copy-email").textContent = ok ? "Copied" : "Select and copy";
+    if (!ok) { const r = document.createRange(); r.selectNodeContents($("#email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    setTimeout(() => $("#copy-email").textContent = "Copy email", 2000);
+  });
+  function compose() {
+    const p = $("#p-name").value.trim(), c = $("#c-name").value.trim(), t = $("#topic").value, m = $("#msg").value.trim();
+    const subject = c ? `${t}: ${c}` : t;
+    const body = `Hi Mr. Andrade,\n\n${m || "(your message)"}\n\nThank you,\n${p || "(your name)"}${c ? `\nParent/guardian of ${c}` : ""}`;
+    return { subject, body };
+  }
+  function updateMailto() { const { subject, body } = compose(); $("#mailto").href = `mailto:${$("#email").textContent}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; }
+  ["#p-name", "#c-name", "#topic", "#msg"].forEach(s => $(s).addEventListener("input", updateMailto));
+  updateMailto();
+  $("#helper").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const { subject, body } = compose();
+    const text = `To: ${$("#email").textContent}\nSubject: ${subject}\n\n${body}`;
+    const pre = $("#preview"); pre.textContent = text; pre.hidden = false;
+    const ok = await copy(text);
+    $("#status").textContent = ok ? "Copied. Paste it into a new email to Mr. Andrade." : "Select the message below and copy it into your email.";
+  });
+
+  fetch("posts.json", { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(render).catch(() => {
+    $("#upcoming").replaceChildren(el("li", { class: "empty" }, "Class updates couldn't load right now. Please refresh the page."));
+  });
+})();
+</script>
+
+</body>
+</html>
