@@ -214,6 +214,21 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
 .daynote-text { margin: 0; font-size: 18px; line-height: 1.5; white-space: pre-line; max-width: 70ch; overflow-wrap: anywhere }
 .daynote-sign { margin: 0; font-style: italic; color: var(--ink-soft); font-size: 14px }
 @media (max-width: 640px) { .daynote { padding: 14px 16px 12px } .daynote-text { font-size: 17px } }
+
+/* Extra Practice */
+.handouts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr) }
+.ho { display: grid; grid-template-columns: 44px 1fr; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; min-width: 0 }
+.ho-num { width: 40px; height: 40px; border-radius: 50%; background: var(--brand); color: #fff7f0; font-family: var(--display); font-weight: 800; font-size: 20px; display: grid; place-items: center }
+.ho-body { display: flex; flex-direction: column; gap: 4px; min-width: 0 }
+.ho h4 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 18px; text-wrap: balance }
+.ho-meta { margin: 0; font-size: 13px; color: var(--ink-soft) }
+.ho-goal { margin: 0; color: var(--ink-soft); font-size: 15px }
+.ho-link { align-self: flex-start; margin-top: 6px; display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 6px 12px 6px 8px; font-size: 14px; font-weight: 700 }
+.ho-link:hover { border-color: var(--link) }
+.ho-link .ft { font-size: 11px; font-weight: 700; letter-spacing: .05em; background: var(--brand); color: #fff7f0; border-radius: 999px; padding: 2px 7px }
+.resources.apps a { border-top: 4px solid var(--accent) }
+@media (min-width: 1000px) { .handouts { grid-template-columns: repeat(2, minmax(0, 1fr)) } .resources { grid-template-columns: repeat(3, minmax(0, 1fr)) } .parents-grid .resources { grid-template-columns: 1fr 1fr } }
+@media (max-width: 640px) { .ho { grid-template-columns: 1fr; gap: 8px } .ho-link { align-self: stretch; justify-content: center; padding: 10px 14px } nav.tabs button { font-size: 11px } }
 </style>
 </head>
 <body>
@@ -231,6 +246,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   <div class="wrap" role="tablist">
     <button role="tab" id="tab-home" data-view="home" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg><span class="lbl-long">This Week</span><span class="lbl-short">This Week</span></button>
     <button role="tab" id="tab-classwork" data-view="classwork" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><span class="lbl-long">Classwork</span><span class="lbl-short">Classwork</span></button>
+    <button role="tab" id="tab-practice" data-view="practice" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span class="lbl-long">Extra Practice</span><span class="lbl-short">Practice</span></button>
     <button role="tab" id="tab-dates" data-view="dates" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="lbl-long">Important Dates</span><span class="lbl-short">Dates</span></button>
     <button role="tab" id="tab-parents" data-view="parents" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span class="lbl-long">Parent Corner</span><span class="lbl-short">Parents</span></button>
   </div>
@@ -267,6 +283,100 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
       <div><h2>Classwork</h2><p class="sub">Everything posted in Google Classroom, sorted by subject. Tap a file to open it.</p></div>
       <div class="filters" id="filters" role="group" aria-label="Filter by subject"></div>
       <div class="block" id="topics"></div>
+    </section>
+
+    <section class="view" id="view-practice" role="tabpanel" aria-labelledby="tab-practice" hidden>
+      <div><h2>Extra Practice</h2><p class="sub">Printable practice for our first math unit, plus the online tools we use in class. A little practice a few times a week goes a long way.</p></div>
+
+      <div class="block">
+        <div><h3>Math handouts: Block 1, Number and Data</h3><p class="sub">Each handout follows a part of our current unit and ends with an answer key and a tip for families. Print it or work on paper while looking at the screen.</p></div>
+        <ol class="handouts">
+        <li class="ho">
+          <span class="ho-num">1</span>
+          <div class="ho-body">
+            <h4>Place Value to 100 000</h4>
+            <p class="ho-meta">Block 1, Days 4 to 6 · Ontario B1.1</p>
+            <p class="ho-goal">I can read, write and represent whole numbers up to 100 000.</p>
+            <a class="ho-link" href="handouts/1-place-value-to-100000.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">2</span>
+          <div class="ho-body">
+            <h4>Compare and Order Whole Numbers</h4>
+            <p class="ho-meta">Block 1, Days 7 and 8 · Ontario B1.2</p>
+            <p class="ho-goal">I can compare and order whole numbers up to 100 000.</p>
+            <a class="ho-link" href="handouts/2-compare-and-order-whole-numbers.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">3</span>
+          <div class="ho-body">
+            <h4>Decimals to Hundredths</h4>
+            <p class="ho-meta">Block 1, Days 9 to 11 and 19 · Ontario B1.5, C1.4</p>
+            <p class="ho-goal">I can read, represent, compare and order decimal numbers up to hundredths.</p>
+            <a class="ho-link" href="handouts/3-decimals-to-hundredths.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">4</span>
+          <div class="ho-body">
+            <h4>Rounding Decimals to the Nearest Tenth</h4>
+            <p class="ho-meta">Block 1, Day 12 · Ontario B1.6</p>
+            <p class="ho-goal">I can round decimal numbers to the nearest tenth.</p>
+            <a class="ho-link" href="handouts/4-rounding-decimals.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">5</span>
+          <div class="ho-body">
+            <h4>Adding and Subtracting Whole Numbers and Decimals</h4>
+            <p class="ho-meta">Block 1, Days 15 to 18 · Ontario B2.4</p>
+            <p class="ho-goal">I can add and subtract whole numbers and decimals using different strategies.</p>
+            <a class="ho-link" href="handouts/5-adding-and-subtracting.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">6</span>
+          <div class="ho-body">
+            <h4>Fractions: Equivalent, Improper and Mixed</h4>
+            <p class="ho-meta">Block 1, Days 20 to 26 · Ontario B1.3, B1.4</p>
+            <p class="ho-goal">I can find equivalent fractions and compare and order fractions, including improper fractions and mixed numbers.</p>
+            <a class="ho-link" href="handouts/6-fractions.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho">
+          <span class="ho-num">7</span>
+          <div class="ho-body">
+            <h4>Data: Samples and Graphs</h4>
+            <p class="ho-meta">Block 1, Days 13 and 14 · Ontario D1.1, D1.6</p>
+            <p class="ho-goal">I can choose a fair sample and read and question stacked bar graphs and misleading graphs.</p>
+            <a class="ho-link" href="handouts/7-data-and-graphs.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <div><h3>Our class apps</h3><p class="sub">Your child uses these at school. They have the class codes; if they've forgotten, send me a message from Parent Corner.</p></div>
+        <ul class="resources apps">
+          <li><a href="https://joinkh.com" target="_blank" rel="noopener">Knowledgehook<span>Math practice tied to what we're learning. Go to joinkh.com and enter the class code.</span></a></li>
+          <li><a href="https://www.prodigygame.com" target="_blank" rel="noopener">Prodigy Math<span>A math adventure game. Choose Log in and use your child's username and password.</span></a></li>
+          <li><a href="https://kids.getepic.com/students" target="_blank" rel="noopener">Epic<span>A digital library of kids' books. Choose Enter class code, then your child's name.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div><h3>More free resources I recommend</h3><p class="sub">All free, no purchase needed.</p></div>
+        <ul class="resources">
+          <li><a href="https://mathify.tvolearn.com" target="_blank" rel="noopener">TVO Learn Mathify<span>Free one on one online math tutoring with Ontario certified teachers, for Grades 4 to 12. Evenings and weekends too.</span></a></li>
+          <li><a href="https://mathies.ca" target="_blank" rel="noopener">Mathies<span>Ontario made virtual math tools and games: base ten blocks, fraction strips, number lines and more.</span></a></li>
+          <li><a href="https://polypad.amplify.com/p#number-tiles" target="_blank" rel="noopener">Polypad<span>The virtual manipulatives we use in class for place value and fractions.</span></a></li>
+          <li><a href="https://www.topmarks.co.uk/maths-games/hit-the-button" target="_blank" rel="noopener">Hit the Button<span>Quick games for multiplication and division facts up to 12 × 12.</span></a></li>
+          <li><a href="https://beastacademy.com/puzzles/daily/allten" target="_blank" rel="noopener">Beast Academy daily puzzle<span>A new number puzzle every day. Great for problem solvers.</span></a></li>
+          <li><a href="https://www.tvdsb.ca/students/homework-help/" target="_blank" rel="noopener">TVDSB Homework Help<span>The board's page of free homework support.</span></a></li>
+        </ul>
+      </div>
     </section>
 
     <section class="view" id="view-dates" role="tabpanel" aria-labelledby="tab-dates" hidden>
@@ -469,7 +579,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   }
 
   // Tabs with bookmarkable #tokens
-  const views = ["home", "classwork", "dates", "parents"];
+  const views = ["home", "classwork", "practice", "dates", "parents"];
   function show(v) {
     if (!views.includes(v)) v = "home";
     views.forEach(x => { $("#view-" + x).hidden = x !== v; $("#tab-" + x).setAttribute("aria-selected", String(x === v)); });
