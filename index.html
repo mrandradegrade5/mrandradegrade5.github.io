@@ -110,7 +110,8 @@ h3 { font-family: var(--display); font-weight: 600; font-size: 19px; margin: 0; 
 
 /* Filters */
 .filters { display: flex; flex-wrap: wrap; gap: 8px }
-.filters button { font: 700 14px/1 var(--body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 8px 14px; cursor: pointer }
+.filters button { font: 700 15px/1.1 var(--body); border: 1.5px solid var(--brand); background: var(--card); color: var(--brand); border-radius: 10px; padding: 10px 16px; cursor: pointer; box-shadow: 0 2px 0 var(--line) }
+.filters button:hover { background: color-mix(in srgb, var(--accent) 18%, var(--card)) }
 .filters button[aria-pressed="true"] { background: var(--brand); color: #fff7f0; border-color: var(--brand) }
 .topic-group { display: flex; flex-direction: column; gap: 12px }
 .topic-group > h3 { display: flex; align-items: center; gap: 10px }
@@ -199,8 +200,8 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   .links a { padding: 10px 14px 10px 10px; font-size: 15px }
   .due-item { grid-template-columns: 54px 1fr; gap: 12px; padding: 10px 12px }
   .datebox .d { font-size: 21px }
-  .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); scrollbar-width: none }
-  .filters button { flex: 0 0 auto; padding: 10px 14px }
+  .filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px }
+  .filters button { padding: 12px 6px; font-size: 14px; text-align: center }
   .emailrow .btn, .actions .btn { flex: 1 1 auto; justify-content: center; padding: 13px 16px }
 }
 
