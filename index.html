@@ -229,6 +229,24 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
 .resources.apps a { border-top: 4px solid var(--accent) }
 @media (min-width: 1000px) { .handouts { grid-template-columns: repeat(2, minmax(0, 1fr)) } .resources { grid-template-columns: repeat(3, minmax(0, 1fr)) } .parents-grid .resources { grid-template-columns: 1fr 1fr } }
 @media (max-width: 640px) { .ho { grid-template-columns: 1fr; gap: 8px } .ho-link { align-self: stretch; justify-content: center; padding: 10px 14px } nav.tabs button { font-size: 11px } }
+
+/* Day cycle + schedule */
+.daynote-msg { display: flex; flex-direction: column; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid var(--line) }
+.nextday { display: flex; flex-direction: column; gap: 8px }
+.nextday-title { margin: 0; font-family: var(--display); font-weight: 800; font-size: 22px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.daypill { background: var(--brand); color: #fff7f0; border-radius: 999px; padding: 2px 12px; font-size: 18px }
+.nextday-today { margin: 0; color: var(--ink-soft); font-size: 14px }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px }
+.chips li { background: color-mix(in srgb, var(--accent) 22%, var(--card)); border: 1px solid var(--accent); border-radius: 999px; padding: 3px 10px; font-size: 13px; font-weight: 700 }
+.sched summary { cursor: pointer; font-weight: 700; color: var(--ink-soft); font-size: 14px }
+.sched-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px }
+.sched-list li { display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: baseline; padding: 6px 10px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); font-size: 14px; min-width: 0 }
+.sched-list .t { color: var(--ink-soft); font-variant-numeric: tabular-nums; font-size: 13px }
+.sched-list .s { font-weight: 700 }
+.sched-list li.brk { background: transparent; border-style: dashed }
+.sched-list li.brk .s { font-weight: 400; color: var(--ink-soft) }
+.sched-list li.hl { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--card)) }
+@media (max-width: 640px) { .sched-list { grid-template-columns: 1fr } .nextday-title { font-size: 20px } }
 </style>
 </head>
 <body>
@@ -256,10 +274,18 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   <div class="wrap">
 
     <section class="view" id="view-home" role="tabpanel" aria-labelledby="tab-home">
-     <aside class="daynote" id="daynote" aria-label="Daily note from Mr. Andrade" hidden>
-       <div class="daynote-head"><span class="daynote-label">Daily Planner Note</span><span class="daynote-date" id="daynote-date"></span></div>
-       <p class="daynote-text" id="daynote-text"></p>
-       <p class="daynote-sign">Mr. Andrade</p>
+     <aside class="daynote" id="daynote" aria-label="Daily planner" hidden>
+       <div class="daynote-head"><span class="daynote-label">Daily Planner</span><span class="daynote-date" id="daynote-date"></span></div>
+       <div class="daynote-msg" id="daynote-msg" hidden>
+         <p class="daynote-text" id="daynote-text"></p>
+         <p class="daynote-sign">Mr. Andrade</p>
+       </div>
+       <div class="nextday" id="nextday" hidden>
+         <p class="nextday-title"><span id="nextday-when"></span> <span class="daypill" id="nextday-num"></span></p>
+         <p class="nextday-today" id="nextday-today"></p>
+         <ul class="chips" id="nextday-chips"></ul>
+         <details class="sched" id="sched" open><summary>Schedule</summary><ol class="sched-list" id="sched-list"></ol></details>
+       </div>
      </aside>
      <div class="home-grid">
       <aside class="block home-side">
@@ -615,6 +641,67 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     $("#status").textContent = ok ? "Copied. Paste it into a new email to Mr. Andrade." : "Select the message below and copy it into your email.";
   });
 
+
+  // ---- Day cycle (10-day rotation, TVDSB 2026-27 elementary calendar) ----
+  const CYCLE_START = new Date(2026, 8, 8), LAST_DAY = new Date(2027, 5, 29);
+  const OFF = new Set();
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  const addOff = (a, b) => { let d = parse(a), e = parse(b || a); while (d <= e) { OFF.add(iso(d)); d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1); } };
+  [["2026-09-04"],["2026-09-07"],["2026-10-12"],["2026-10-26"],["2026-12-21","2027-01-01"],["2027-01-15"],["2027-02-15"],["2027-03-15","2027-03-19"],["2027-03-26"],["2027-03-29"],["2027-04-16"],["2027-05-24"],["2027-06-04"]].forEach(r => addOff(r[0], r[1]));
+  const isSchoolDay = d => d >= CYCLE_START && d <= LAST_DAY && d.getDay() > 0 && d.getDay() < 6 && !OFF.has(iso(d));
+  function cycleDay(target) {
+    if (!isSchoolDay(target)) return null;
+    let n = 0, d = new Date(CYCLE_START);
+    while (d < target) { if (isSchoolDay(d)) n++; d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1); }
+    return n % 10 + 1;
+  }
+  const TIMES = ["9:10–9:30","9:30–10:10","10:10–10:50","10:50–11:10","11:10–11:30","11:30–12:10","12:10–12:50","12:50–1:30","1:30–1:50","1:50–2:10","2:10–2:50","2:50–3:30"];
+  const ROWS = [
+    Array(10).fill("Bell Work"),
+    ["Literacy","Phys. Ed (Gym 1)","Literacy","Phys. Ed (Gym 1)","Literacy","Literacy","Literacy","Literacy","Literacy","Literacy"],
+    ["Literacy / Social Studies","Literacy","Literacy / Social Studies","Literacy","Literacy / Social Studies","Literacy","Literacy / Social Studies","Literacy","Literacy / Health","Phys. Ed (Gym 2)"],
+    Array(10).fill("Recess"), Array(10).fill("Nutrition Break"),
+    Array(10).fill("Math"),
+    ["Math","Math","Math","Music","Math","Math","Music","Math","Math","Math"],
+    Array(10).fill("French"),
+    Array(10).fill("Recess"), Array(10).fill("Nutrition Break"),
+    ["Arts","Science","Health","Math","Library","Science","Math","Science","Arts","Science"],
+    ["Music","Science","Arts","Science","Library","Science","Phys. Ed (Gym 2)","Phys. Ed (Gym 1)","Music","Science"]
+  ];
+  function scheduleFor(day) {
+    const out = [];
+    ROWS.forEach((row, i) => {
+      const subj = row[day - 1], last = out[out.length - 1];
+      if (last && last.s === subj && !/Recess|Nutrition/.test(subj)) last.t = last.t.split("–")[0] + "–" + TIMES[i].split("–")[1];
+      else out.push({ t: TIMES[i], s: subj });
+    });
+    return out;
+  }
+  function renderNextDay() {
+    let next = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1), guard = 0;
+    while (!isSchoolDay(next) && next <= LAST_DAY && guard++ < 40) next = new Date(next.getFullYear(), next.getMonth(), next.getDate() + 1);
+    if (!isSchoolDay(next)) return false;
+    const day = cycleDay(next), gap = Math.round((next - today) / 86400000);
+    const when = gap === 1 ? "Tomorrow is" : (gap <= 3 && next.getDay() === 1 ? "Monday is" : `${DAY[next.getDay()]}, ${MONTH[next.getMonth()]} ${next.getDate()} is`);
+    $("#nextday-when").textContent = when;
+    $("#nextday-num").textContent = `Day ${day}`;
+    const td = cycleDay(today);
+    $("#nextday-today").textContent = td ? `Today is Day ${td}.` : (gap > 1 ? `Classes resume ${DAY[next.getDay()]}, ${MONTH[next.getMonth()]} ${next.getDate()}.` : "No school today.");
+    const sched = scheduleFor(day);
+    const chips = [];
+    if (sched.some(x => /Phys/.test(x.s))) chips.push("Gym: wear running shoes");
+    if (sched.some(x => /Library/.test(x.s))) chips.push("Library: bring books to return");
+    if (sched.some(x => /Music/.test(x.s))) chips.push("Music class");
+    $("#nextday-chips").replaceChildren(...chips.map(c => el("li", {}, c)));
+    $("#sched-list").replaceChildren(...sched.map(x => el("li", { class: /Recess|Nutrition/.test(x.s) ? "brk" : (/Phys|Library|Music/.test(x.s) ? "hl" : "") }, el("span", { class: "t" }, x.t), el("span", { class: "s" }, x.s))));
+    $("#nextday").hidden = false;
+    return true;
+  }
+  if (renderNextDay()) {
+    $("#daynote-date").textContent = `${DAY[today.getDay()]}, ${MONTH[today.getMonth()]} ${today.getDate()}`;
+    $("#daynote").hidden = false;
+  }
+
   // Daily Planner Note: read from Mr. Andrade's published Google Sheet (row 2: note, show-until date)
   const NOTE_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCSZE8ix7Z9qpLqo6NF-016jlwFNDLRAEWuCKEBKcazel-XtSTpVf6NAzeo4U5XQFkt4plsVy3n6GA/pub?output=csv";
   function parseCSV(t) {
@@ -643,6 +730,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     const until = parseUntil(row[1]);
     if (until && until < today) return;
     $("#daynote-text").textContent = note;
+    $("#daynote-msg").hidden = false;
     $("#daynote-date").textContent = `${DAY[today.getDay()]}, ${MONTH[today.getMonth()]} ${today.getDate()}`;
     $("#daynote").hidden = false;
   }).catch(() => {});
