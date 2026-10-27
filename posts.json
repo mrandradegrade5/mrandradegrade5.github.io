@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T17:30:00-04:00",
+  "updated": "2026-10-27T08:50:00-04:00",
   "class": {
     "name": "Mr. Andrade's Grade 5",
     "school": "Masonville P.S.",
@@ -17,6 +17,29 @@
     "Miscellaneous/Other"
   ],
   "posts": [
+    {
+      "id": "891849049262",
+      "topic": "Literacy",
+      "type": "material",
+      "spelling": true,
+      "title": "Week 5 Spelling",
+      "posted": "2026-10-27",
+      "due": null,
+      "text": "This week's spelling lists are attached. Group A and Group B, please open your group's list.",
+      "parentNote": "Your child knows whether they are in Group A or Group B. Practising the list a few minutes each night helps.",
+      "links": [
+        {
+          "label": "Group A list",
+          "kind": "PDF",
+          "url": "https://drive.google.com/file/d/1sBGsMgR-cBCzyiNkIFCTZ8LNZ9IwgUuq/view"
+        },
+        {
+          "label": "Group B list",
+          "kind": "PDF",
+          "url": "https://drive.google.com/file/d/1Cod6d_5sp6oU2l9UVJtDiSnU4rLTpK7J/view"
+        }
+      ]
+    },
     {
       "id": "874198439941",
       "topic": "Literacy",
@@ -41,29 +64,6 @@
           "label": "Book Report Sample",
           "kind": "Slides",
           "url": "https://docs.google.com/presentation/d/1pJgW5rooTjy3izkiIeLRK-Ld94TMxNK4s3brpbSE_d8/edit"
-        }
-      ]
-    },
-    {
-      "id": "891849671255",
-      "topic": "Literacy",
-      "type": "material",
-      "spelling": true,
-      "title": "Week 4 Spelling",
-      "posted": "2026-10-13",
-      "due": null,
-      "text": "This week's spelling lists are attached. Group A and Group B, please open your group's list.",
-      "parentNote": "Your child knows whether they are in Group A or Group B. Practising the list a few minutes each night helps.",
-      "links": [
-        {
-          "label": "Group A list",
-          "kind": "PDF",
-          "url": "https://drive.google.com/file/d/1kKyem7LnVuvQoLjt4nhApRZeLvxx0rQI/view"
-        },
-        {
-          "label": "Group B list",
-          "kind": "PDF",
-          "url": "https://drive.google.com/file/d/15Grf7YcZ2SQ7szM601D62LZx6UCY1EvG/view"
         }
       ]
     },
@@ -260,45 +260,6 @@
       ]
     },
     {
-      "id": "873299506765",
-      "topic": "Art",
-      "type": "assignment",
-      "title": "Candy Shoe Art Assignment",
-      "posted": "2026-09-22",
-      "due": "2026-10-14",
-      "text": "",
-      "parentNote": "Students design a candy themed sneaker. The PDF has printable templates.",
-      "links": [
-        {
-          "label": "Candy Shoe Art",
-          "kind": "Slides",
-          "url": "https://docs.google.com/presentation/d/1AgvwlV2qdeTprJeJlqM_kIRi8j3AW-VOWgAxdQexrsM/edit"
-        },
-        {
-          "label": "Sneaker colouring templates",
-          "kind": "PDF",
-          "url": "https://drive.google.com/file/d/10gmAkB-iDRxqtVAd2qdxm3ZHHaD-RfXW/view"
-        }
-      ]
-    },
-    {
-      "id": "872931907149",
-      "topic": "Art",
-      "type": "material",
-      "title": "Puzzle Piece Art",
-      "posted": "2026-09-11",
-      "due": null,
-      "text": "",
-      "parentNote": "Our first art project of the year.",
-      "links": [
-        {
-          "label": "Puzzle Piece Art",
-          "kind": "Slides",
-          "url": "https://docs.google.com/presentation/d/1OfXDCc_LvBwrmtatjrblZPaGQ5xgI2EnYzbFelfP5KI/edit"
-        }
-      ]
-    },
-    {
       "id": "888490634775",
       "topic": "Bell Work",
       "type": "material",
@@ -329,28 +290,6 @@
           "label": "September Grade 5/6 Bell Work",
           "kind": "Slides",
           "url": "https://docs.google.com/presentation/d/174N2kI2IjkfzAOXkFNeSdAyxxKVWTGk5EDyY7lkw4NQ/edit"
-        }
-      ]
-    },
-    {
-      "id": "885009683367",
-      "topic": "Miscellaneous/Other",
-      "type": "assignment",
-      "title": "Passion Project",
-      "posted": "2026-09-14",
-      "due": null,
-      "text": "",
-      "parentNote": "An ongoing project where students explore a topic they care about.",
-      "links": [
-        {
-          "label": "Passion Project Template",
-          "kind": "Slides",
-          "url": "https://docs.google.com/presentation/d/1dklsVVoDXsw4XcEwaVS6eG0ODax3z5UKEUmSVKOQQ0s/edit"
-        },
-        {
-          "label": "Passion Project",
-          "kind": "PowerPoint",
-          "url": "https://drive.google.com/file/d/1UYbHBDYHgH3Y9w4bhHjnpLzKLTKEp-Ey/view"
         }
       ]
     }
