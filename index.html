@@ -283,7 +283,6 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
        <div class="nextday" id="nextday" hidden>
          <p class="nextday-title"><span id="nextday-when"></span> <span class="daypill" id="nextday-num"></span></p>
          <p class="nextday-today" id="nextday-today"></p>
-         <ul class="chips" id="nextday-chips"></ul>
          <details class="sched" id="sched" open><summary>Schedule</summary><ol class="sched-list" id="sched-list"></ol></details>
        </div>
      </aside>
@@ -688,11 +687,6 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     const td = cycleDay(today);
     $("#nextday-today").textContent = td ? `Today is Day ${td}.` : (gap > 1 ? `Classes resume ${DAY[next.getDay()]}, ${MONTH[next.getMonth()]} ${next.getDate()}.` : "No school today.");
     const sched = scheduleFor(day);
-    const chips = [];
-    if (sched.some(x => /Phys/.test(x.s))) chips.push("Gym: wear running shoes");
-    if (sched.some(x => /Library/.test(x.s))) chips.push("Library: bring books to return");
-    if (sched.some(x => /Music/.test(x.s))) chips.push("Music class");
-    $("#nextday-chips").replaceChildren(...chips.map(c => el("li", {}, c)));
     $("#sched-list").replaceChildren(...sched.map(x => el("li", { class: /Recess|Nutrition/.test(x.s) ? "brk" : (/Phys|Library|Music/.test(x.s) ? "hl" : "") }, el("span", { class: "t" }, x.t), el("span", { class: "s" }, x.s))));
     $("#nextday").hidden = false;
     return true;
