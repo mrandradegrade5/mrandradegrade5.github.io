@@ -41,6 +41,24 @@
       ]
     },
     {
+      "id": "900000000001",
+      "topic": "Miscellaneous",
+      "type": "material",
+      "spelling": false,
+      "title": "October Newsletter",
+      "posted": "2026-10-28",
+      "due": null,
+      "text": "Attached is the parent newsletter for October.",
+      "parentNote": "",
+      "links": [
+        {
+          "label": "October Newsletter",
+          "kind": "PDF",
+          "url": "https://drive.google.com/file/d/1X0oUc0Cmtu0Lk4ckWYknYpZVVTQWXutl/view?usp=sharing"
+        }
+      ]
+    },
+    {
       "id": "874198439941",
       "topic": "Literacy",
       "type": "assignment",
