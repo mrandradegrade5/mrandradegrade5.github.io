@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T08:50:00-04:00",
+  "updated": "2026-10-30T08:15:53-04:00",
   "class": {
     "name": "Mr. Andrade's Grade 5",
     "school": "Masonville P.S.",
@@ -7,6 +7,7 @@
     "email": "tv61990@tvdsb.ca"
   },
   "topics": [
+    "Announcements",
     "Literacy",
     "Math",
     "Social Studies",
@@ -17,6 +18,23 @@
     "Miscellaneous"
   ],
   "posts": [
+    {
+      "id": "896298985782",
+      "topic": "Announcements",
+      "type": "announcement",
+      "title": "October Newsletter",
+      "posted": "2026-10-28",
+      "due": null,
+      "text": "October Newsletter",
+      "parentNote": "Mr. Andrade's monthly letter to families with an update on every subject and important dates for November.",
+      "links": [
+        {
+          "label": "October Grade 5 Newsletter",
+          "kind": "PDF",
+          "url": "https://drive.google.com/file/d/1X0oUc0Cmtu0Lk4ckWYknYpZVVTQWXutl/view"
+        }
+      ]
+    },
     {
       "id": "891849049262",
       "topic": "Literacy",
@@ -37,24 +55,6 @@
           "label": "Group B list",
           "kind": "PDF",
           "url": "https://drive.google.com/file/d/1Cod6d_5sp6oU2l9UVJtDiSnU4rLTpK7J/view"
-        }
-      ]
-    },
-    {
-      "id": "900000000001",
-      "topic": "Miscellaneous",
-      "type": "material",
-      "spelling": false,
-      "title": "October Newsletter",
-      "posted": "2026-10-28",
-      "due": null,
-      "text": "Attached is the parent newsletter for October.",
-      "parentNote": "",
-      "links": [
-        {
-          "label": "October Newsletter",
-          "kind": "PDF",
-          "url": "https://drive.google.com/file/d/1X0oUc0Cmtu0Lk4ckWYknYpZVVTQWXutl/view?usp=sharing"
         }
       ]
     },
@@ -193,7 +193,7 @@
       "type": "assignment",
       "title": "Explorers Biography Assignment",
       "posted": "2026-10-06",
-      "due": "2026-10-23",
+      "due": "2026-10-30",
       "text": "",
       "parentNote": "Students research an explorer and present a biography using the template.",
       "links": [
@@ -324,18 +324,18 @@
       "title": "Remembrance Day Assembly",
       "kind": "school"
     },
-     {
+    {
       "date": "2026-10-30",
       "title": "Week 5 Spelling Dictation",
       "kind": "school"
     },
     {
-    "date": "2026-10-30",
+      "date": "2026-10-30",
       "title": "Explorers Biography Due",
       "kind": "school"
     },
-     {
-    "date": "2026-11-11",
+    {
+      "date": "2026-11-11",
       "title": "Tinkercad Bookmark Due",
       "kind": "school"
     },
