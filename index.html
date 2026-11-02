@@ -766,8 +766,24 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     $("#daynote-date").textContent = `${DAY[today.getDay()]}, ${MONTH[today.getMonth()]} ${today.getDate()}`;
     $("#daynote").hidden = false;
   }).catch(() => {});
-
-  fetch("posts.json", { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(render).catch(() => {
+  // Class updates: read from the Google Sheet the daily Classroom sync writes to (row 2: site info, later rows: one post each).
+  // If the Sheet can't be read, fall back to posts.json in this repo.
+  const POSTS_CSV = "https://docs.google.com/spreadsheets/d/1rR0iA3gEU1d6zunbH-RzNQKS0wc27UOk4pD1olKNgmk/gviz/tq?tqx=out:csv&headers=1&sheet=Sheet1";
+  function loadFromSheet() {
+    return fetch(POSTS_CSV + "&t=" + Date.now(), { credentials: "omit" }).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); }).then(t => {
+      let meta = null; const posts = [];
+      for (const row of parseCSV(t)) {
+        const kind = (row[0] || "").trim(), json = (row[1] || "").trim();
+        if (!json || kind === "kind") continue;
+        if (kind === "meta") meta = JSON.parse(json);
+        else if (kind === "post") posts.push(JSON.parse(json));
+      }
+      if (!meta || !posts.length) throw new Error("empty sheet");
+      return Object.assign({}, meta, { posts });
+    });
+  }
+  const loadFromFile = () => fetch("posts.json", { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  loadFromSheet().catch(loadFromFile).then(render).catch(() => {
     $("#upcoming").replaceChildren(el("li", { class: "empty" }, "Class updates couldn't load right now. Please refresh the page."));
   });
 })();
