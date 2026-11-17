@@ -219,7 +219,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
 .daynote-sign { margin: 0; font-style: italic; color: var(--ink-soft); font-size: 14px }
 @media (max-width: 640px) { .daynote { padding: 14px 16px 12px } .daynote-text { font-size: 17px } }
 
-/* Extra Practice */
+/* Tutoring and Extra Practice, Links and Resources */
 .handouts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr) }
 .ho { display: grid; grid-template-columns: 44px 1fr; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; min-width: 0 }
 .ho-num { width: 40px; height: 40px; border-radius: 50%; background: var(--brand); color: #fff7f0; font-family: var(--display); font-weight: 800; font-size: 20px; display: grid; place-items: center }
@@ -230,6 +230,23 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
 .ho-link { align-self: flex-start; margin-top: 6px; display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 6px 12px 6px 8px; font-size: 14px; font-weight: 700 }
 .ho-link:hover { border-color: var(--link) }
 .ho-link .ft { font-size: 11px; font-weight: 700; letter-spacing: .05em; background: var(--brand); color: #fff7f0; border-radius: 999px; padding: 2px 7px }
+.spotlight { background: color-mix(in srgb, var(--accent) 16%, var(--card)); border: 2px solid var(--accent); border-radius: var(--r); padding: 16px 18px; display: flex; flex-direction: column; gap: 12px }
+.spot-label { margin: 0; font-family: var(--display); font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--brand) }
+:root[data-theme="dark"] .spot-label { color: var(--accent) }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .spot-label { color: var(--accent) } }
+.spot-list { display: flex; flex-direction: column; gap: 14px }
+.spot-item { display: flex; flex-direction: column; gap: 4px }
+.spot-item h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 22px; text-wrap: balance }
+.spot-item p { margin: 0; color: var(--ink-soft) }
+.spot-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px }
+.spot-open { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; color: #fff7f0; background: var(--brand); border-radius: 999px; padding: 9px 16px }
+.spot-open:hover { background: var(--brand-deep) }
+.spot-jump { font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer }
+.spot-jump:hover { border-color: var(--link) }
+.spot-note { margin: 0; font-size: 15px; white-space: pre-line; border-top: 1px solid color-mix(in srgb, var(--accent) 50%, var(--line)); padding-top: 10px }
+.ho.is-now { border: 2px solid var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent) }
+.ho-now { align-self: flex-start; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; background: var(--accent); color: var(--accent-ink, #2a1317); border-radius: 999px; padding: 3px 9px }
+@media (max-width: 640px) { .spot-open, .spot-jump { flex: 1 1 100%; justify-content: center; text-align: center } }
 .resources.apps a { border-top: 4px solid var(--accent) }
 .codes { background: var(--card); border: 2px solid var(--brand); border-radius: var(--r); padding: 16px 18px; display: flex; flex-direction: column; gap: 12px }
 .codes h4 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--brand) }
@@ -285,7 +302,8 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   <div class="wrap" role="tablist">
     <button role="tab" id="tab-home" data-view="home" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg><span class="lbl-long">This Week</span><span class="lbl-short">This Week</span></button>
     <button role="tab" id="tab-classwork" data-view="classwork" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><span class="lbl-long">Classwork</span><span class="lbl-short">Classwork</span></button>
-    <button role="tab" id="tab-practice" data-view="practice" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span class="lbl-long">Extra Practice</span><span class="lbl-short">Practice</span></button>
+    <button role="tab" id="tab-practice" data-view="practice" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span class="lbl-long">Tutoring and Extra Practice</span><span class="lbl-short">Practice</span></button>
+    <button role="tab" id="tab-links" data-view="links" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="lbl-long">Links and Resources</span><span class="lbl-short">Links</span></button>
     <button role="tab" id="tab-dates" data-view="dates" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="lbl-long">Important Dates</span><span class="lbl-short">Dates</span></button>
     <button role="tab" id="tab-parents" data-view="parents" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span class="lbl-long">Parent Corner</span><span class="lbl-short">Parents</span></button>
   </div>
@@ -332,76 +350,122 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     </section>
 
     <section class="view" id="view-practice" role="tabpanel" aria-labelledby="tab-practice" hidden>
-      <div><h2>Extra Practice</h2><p class="sub">Printable practice for our first math unit, plus the online tools we use in class. A little practice a few times a week goes a long way.</p></div>
+      <div><h2>Tutoring and Extra Practice</h2><p class="sub">Printable practice that follows what we're learning in class, plus free tutoring. A little practice a few times a week goes a long way.</p></div>
+
+      <div class="spotlight" id="spotlight" hidden aria-live="polite">
+        <p class="spot-label">We're working on this now</p>
+        <div class="spot-list" id="spot-list"></div>
+        <p class="spot-note" id="spot-note" hidden></p>
+      </div>
 
       <div class="block">
-        <div><h3>Math handouts: Block 1, Number and Data</h3><p class="sub">Each handout follows a part of our current unit and ends with an answer key and a tip for families. Print it or work on paper while looking at the screen.</p></div>
+        <div><h3>Math handouts: Block 1, Number and Data</h3><p class="sub">Each handout matches a day in our Block 1 lesson slides (the day is in the title) and ends with a tip for families and an answer key. Print it or work on paper while looking at the screen.</p></div>
         <ol class="handouts">
-        <li class="ho">
+        <li class="ho" id="ho-1" data-ho="1">
           <span class="ho-num">1</span>
           <div class="ho-body">
-            <h4>Place Value to 100 000</h4>
-            <p class="ho-meta">Block 1, Days 4 to 6 · Ontario B1.1</p>
+            <h4>Place Value to 100 000 (Days 4 to 6)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.1</p>
             <p class="ho-goal">I can read, write and represent whole numbers up to 100 000.</p>
             <a class="ho-link" href="handouts/1-place-value-to-100000.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-2" data-ho="2">
           <span class="ho-num">2</span>
           <div class="ho-body">
-            <h4>Compare and Order Whole Numbers</h4>
-            <p class="ho-meta">Block 1, Days 7 and 8 · Ontario B1.2</p>
+            <h4>Compare and Order Whole Numbers (Days 7 and 8)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.2</p>
             <p class="ho-goal">I can compare and order whole numbers up to 100 000.</p>
             <a class="ho-link" href="handouts/2-compare-and-order-whole-numbers.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-3" data-ho="3">
           <span class="ho-num">3</span>
           <div class="ho-body">
-            <h4>Decimals to Hundredths</h4>
-            <p class="ho-meta">Block 1, Days 9 to 11 and 19 · Ontario B1.5, C1.4</p>
+            <h4>Decimals to Hundredths (Days 9 to 11 and 17)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.5, C1.4</p>
             <p class="ho-goal">I can read, represent, compare and order decimal numbers up to hundredths.</p>
             <a class="ho-link" href="handouts/3-decimals-to-hundredths.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-4" data-ho="4">
           <span class="ho-num">4</span>
           <div class="ho-body">
-            <h4>Rounding Decimals to the Nearest Tenth</h4>
-            <p class="ho-meta">Block 1, Day 12 · Ontario B1.6</p>
+            <h4>Rounding Decimals to the Nearest Tenth (Day 12)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.6</p>
             <p class="ho-goal">I can round decimal numbers to the nearest tenth.</p>
             <a class="ho-link" href="handouts/4-rounding-decimals.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-5" data-ho="5">
           <span class="ho-num">5</span>
           <div class="ho-body">
-            <h4>Adding and Subtracting Whole Numbers and Decimals</h4>
-            <p class="ho-meta">Block 1, Days 15 to 18 · Ontario B2.4</p>
+            <h4>Adding and Subtracting Whole Numbers and Decimals (Days 13 to 16)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B2.4</p>
             <p class="ho-goal">I can add and subtract whole numbers and decimals using different strategies.</p>
             <a class="ho-link" href="handouts/5-adding-and-subtracting.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-6" data-ho="6">
           <span class="ho-num">6</span>
           <div class="ho-body">
-            <h4>Fractions: Equivalent, Improper and Mixed</h4>
-            <p class="ho-meta">Block 1, Days 20 to 26 · Ontario B1.3, B1.4</p>
-            <p class="ho-goal">I can find equivalent fractions and compare and order fractions, including improper fractions and mixed numbers.</p>
+            <h4>Equivalent Fractions and Comparing Fractions (Days 18, 19, 21 and 24)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.3, B1.4</p>
+            <p class="ho-goal">I can find equivalent fractions, and compare and order fractions from halves to twelfths.</p>
             <a class="ho-link" href="handouts/6-fractions.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
-        <li class="ho">
+        <li class="ho" id="ho-7" data-ho="7">
           <span class="ho-num">7</span>
           <div class="ho-body">
-            <h4>Data: Samples and Graphs</h4>
-            <p class="ho-meta">Block 1, Days 13 and 14 · Ontario D1.1, D1.6</p>
+            <h4>Data: Samples and Graphs (Days 27 and 28)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario D1.1, D1.6</p>
             <p class="ho-goal">I can choose a fair sample and read and question stacked bar graphs and misleading graphs.</p>
             <a class="ho-link" href="handouts/7-data-and-graphs.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
           </div>
         </li>
+        <li class="ho" id="ho-8" data-ho="8">
+          <span class="ho-num">8</span>
+          <div class="ho-body">
+            <h4>Patterns with Whole Numbers and Decimals (Day 17)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario C1.4</p>
+            <p class="ho-goal">I can create and describe patterns using ones, tenths and hundredths.</p>
+            <a class="ho-link" href="handouts/8-decimal-patterns.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho" id="ho-9" data-ho="9">
+          <span class="ho-num">9</span>
+          <div class="ho-body">
+            <h4>Multiplication and Division Facts (Days 25 and 26)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B2.2</p>
+            <p class="ho-goal">I can recall multiplication and division facts up to 12 × 12, and use facts I know to find facts I don’t know yet.</p>
+            <a class="ho-link" href="handouts/9-multiplication-and-division-facts.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
+        <li class="ho" id="ho-10" data-ho="10">
+          <span class="ho-num">10</span>
+          <div class="ho-body">
+            <h4>Improper Fractions and Mixed Numbers (Days 20, 22 and 23)</h4>
+            <p class="ho-meta">Block 1 lesson slides · Ontario B1.3, B1.4</p>
+            <p class="ho-goal">I can show amounts greater than one whole as improper fractions and as mixed numbers, and change from one to the other.</p>
+            <a class="ho-link" href="handouts/10-improper-fractions-and-mixed-numbers.pdf" target="_blank" rel="noopener"><span class="ft">PDF</span>Open handout and answer key</a>
+          </div>
+        </li>
         </ol>
       </div>
+
+
+      <div class="block">
+        <div><h3>Free tutoring and homework help</h3><p class="sub">Extra help outside class time, at no cost to families.</p></div>
+        <ul class="resources">
+          <li><a href="https://mathify.tvolearn.com" target="_blank" rel="noopener">TVO Learn Mathify<span>Free one on one online math tutoring with Ontario certified teachers, for Grades 4 to 12. Evenings and weekends too.</span></a></li>
+          <li><a href="https://www.tvdsb.ca/students/homework-help/" target="_blank" rel="noopener">TVDSB Homework Help<span>The board's page of free homework support.</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="view" id="view-links" role="tabpanel" aria-labelledby="tab-links" hidden>
+      <div><h2>Links and Resources</h2><p class="sub">The apps and websites we use in class, with our class codes.</p></div>
 
       <div class="block">
         <div><h3>Our class apps</h3><p class="sub">Your child uses these at school. The class codes are below. If anything won't open, send me a message from Parent Corner.</p></div>
@@ -427,12 +491,10 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
       <div class="block">
         <div><h3>More free resources I recommend</h3><p class="sub">All free, no purchase needed.</p></div>
         <ul class="resources">
-          <li><a href="https://mathify.tvolearn.com" target="_blank" rel="noopener">TVO Learn Mathify<span>Free one on one online math tutoring with Ontario certified teachers, for Grades 4 to 12. Evenings and weekends too.</span></a></li>
           <li><a href="https://mathies.ca" target="_blank" rel="noopener">Mathies<span>Ontario made virtual math tools and games: base ten blocks, fraction strips, number lines and more.</span></a></li>
           <li><a href="https://polypad.amplify.com/p#number-tiles" target="_blank" rel="noopener">Polypad<span>The virtual manipulatives we use in class for place value and fractions.</span></a></li>
           <li><a href="https://www.topmarks.co.uk/maths-games/hit-the-button" target="_blank" rel="noopener">Hit the Button<span>Quick games for multiplication and division facts up to 12 × 12.</span></a></li>
           <li><a href="https://beastacademy.com/puzzles/daily/allten" target="_blank" rel="noopener">Beast Academy daily puzzle<span>A new number puzzle every day. Great for problem solvers.</span></a></li>
-          <li><a href="https://www.tvdsb.ca/students/homework-help/" target="_blank" rel="noopener">TVDSB Homework Help<span>The board's page of free homework support.</span></a></li>
         </ul>
       </div>
     </section>
@@ -637,7 +699,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   }
 
   // Tabs with bookmarkable #tokens
-  const views = ["home", "classwork", "practice", "dates", "parents"];
+  const views = ["home", "classwork", "practice", "links", "dates", "parents"];
   function show(v) {
     if (!views.includes(v)) v = "home";
     views.forEach(x => { $("#view-" + x).hidden = x !== v; $("#tab-" + x).setAttribute("aria-selected", String(x === v)); });
@@ -766,6 +828,37 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     $("#daynote-date").textContent = `${DAY[today.getDay()]}, ${MONTH[today.getMonth()]} ${today.getDate()}`;
     $("#daynote").hidden = false;
   }).catch(() => {});
+  // Practice spotlight: Mr. Andrade types handout numbers in cell B1 of the Sheet's "Practice" tab (e.g. 3 or 3, 4).
+  // Optional family note in B2. Blank B1 hides the spotlight.
+  const PRACTICE_CSV = "https://docs.google.com/spreadsheets/d/1rR0iA3gEU1d6zunbH-RzNQKS0wc27UOk4pD1olKNgmk/gviz/tq?tqx=out:csv&headers=0&sheet=Practice&range=A1:B2";
+  function showSpotlight(nums, note) {
+    document.querySelectorAll(".ho.is-now").forEach(li => { li.classList.remove("is-now"); li.querySelector(".ho-now")?.remove(); });
+    const items = nums.map(n => document.getElementById("ho-" + n)).filter(Boolean);
+    if (!items.length) { $("#spotlight").hidden = true; return; }
+    const list = $("#spot-list"); list.replaceChildren();
+    items.forEach(li => {
+      li.classList.add("is-now");
+      li.querySelector(".ho-body").prepend(el("span", { class: "ho-now" }, "Working on this now"));
+      const link = li.querySelector(".ho-link");
+      const jump = el("button", { type: "button", class: "spot-jump" }, "See it in the list");
+      jump.addEventListener("click", () => li.scrollIntoView({ behavior: "smooth", block: "center" }));
+      list.append(el("div", { class: "spot-item" },
+        el("h3", {}, li.querySelector("h4").textContent),
+        el("p", {}, li.querySelector(".ho-goal").textContent),
+        el("div", { class: "spot-btns" }, el("a", { class: "spot-open", href: link.getAttribute("href"), target: "_blank", rel: "noopener" }, "Open this worksheet"), jump)));
+    });
+    const nt = $("#spot-note");
+    nt.textContent = note || ""; nt.hidden = !note;
+    $("#spotlight").hidden = false;
+  }
+  fetch(PRACTICE_CSV + "&t=" + Date.now(), { credentials: "omit" }).then(r => r.ok ? r.text() : "").then(t => {
+    const rows = parseCSV(t || "");
+    if (!/^now practi/i.test(((rows[0] || [])[0] || "").trim())) return; // not the Practice tab
+    const raw = ((rows[0] || [])[1] || "").trim(), note = ((rows[1] || [])[1] || "").trim();
+    const nums = [...new Set((raw.match(/\d+/g) || []).map(Number))];
+    showSpotlight(nums, note);
+  }).catch(() => {});
+
   // Class updates: read from the Google Sheet the daily Classroom sync writes to (row 2: site info, later rows: one post each).
   // If the Sheet can't be read, fall back to posts.json in this repo.
   const POSTS_CSV = "https://docs.google.com/spreadsheets/d/1rR0iA3gEU1d6zunbH-RzNQKS0wc27UOk4pD1olKNgmk/gviz/tq?tqx=out:csv&headers=1&sheet=Sheet1";
