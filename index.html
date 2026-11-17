@@ -819,6 +819,8 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
   }
   fetch(NOTE_CSV + "&t=" + Date.now(), { credentials: "omit" }).then(r => r.ok ? r.text() : "").then(t => {
     const row = parseCSV(t)[1] || [];
+    const nums = [...new Set(((row[2] || "").match(/\d+/g) || []).map(Number))];
+    showSpotlight(nums, (row[3] || "").trim());
     const note = (row[0] || "").trim();
     if (!note) return;
     const until = parseUntil(row[1]);
@@ -828,9 +830,7 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     $("#daynote-date").textContent = `${DAY[today.getDay()]}, ${MONTH[today.getMonth()]} ${today.getDate()}`;
     $("#daynote").hidden = false;
   }).catch(() => {});
-  // Practice spotlight: Mr. Andrade types handout numbers in cell B1 of the Sheet's "Practice" tab (e.g. 3 or 3, 4).
-  // Optional family note in B2. Blank B1 hides the spotlight.
-  const PRACTICE_CSV = "https://docs.google.com/spreadsheets/d/1rR0iA3gEU1d6zunbH-RzNQKS0wc27UOk4pD1olKNgmk/gviz/tq?tqx=out:csv&headers=0&sheet=Practice&range=A1:B2";
+  // Practice spotlight: handout numbers come from cell C2 of the Daily Planner Note sheet (e.g. 3 or 3, 4); optional family note in D2.
   function showSpotlight(nums, note) {
     document.querySelectorAll(".ho.is-now").forEach(li => { li.classList.remove("is-now"); li.querySelector(".ho-now")?.remove(); });
     const items = nums.map(n => document.getElementById("ho-" + n)).filter(Boolean);
@@ -851,13 +851,6 @@ nav.tabs svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stro
     nt.textContent = note || ""; nt.hidden = !note;
     $("#spotlight").hidden = false;
   }
-  fetch(PRACTICE_CSV + "&t=" + Date.now(), { credentials: "omit" }).then(r => r.ok ? r.text() : "").then(t => {
-    const rows = parseCSV(t || "");
-    if (!/^now practi/i.test(((rows[0] || [])[0] || "").trim())) return; // not the Practice tab
-    const raw = ((rows[0] || [])[1] || "").trim(), note = ((rows[1] || [])[1] || "").trim();
-    const nums = [...new Set((raw.match(/\d+/g) || []).map(Number))];
-    showSpotlight(nums, note);
-  }).catch(() => {});
 
   // Class updates: read from the Google Sheet the daily Classroom sync writes to (row 2: site info, later rows: one post each).
   // If the Sheet can't be read, fall back to posts.json in this repo.
